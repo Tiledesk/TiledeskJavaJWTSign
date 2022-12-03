@@ -14,7 +14,6 @@ public class TiledeskJWT {
     
     public static String createJWT(
     		String id,
-    		String issuer,
     		String subject,
     		String aud,
     		String SECRET_KEY,
@@ -30,10 +29,11 @@ public class TiledeskJWT {
         byte[] apiKeySecretBytes;
         apiKeySecretBytes = SECRET_KEY.getBytes();
         Key signingKey = new SecretKeySpec(apiKeySecretBytes, signatureAlgorithm.getJcaName());
-        JwtBuilder builder = Jwts.builder().setId(id)
+        JwtBuilder builder = Jwts.builder()
                 .setIssuedAt(now)
                 .setSubject(subject)
-                .setIssuer(issuer)
+                .claim("aud", aud)
+                .claim("_id", id)
                 .claim("firstname", firstname)
                 .claim("lastname", lastname)
                 .claim("email", email)

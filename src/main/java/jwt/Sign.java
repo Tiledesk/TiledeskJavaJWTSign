@@ -13,13 +13,11 @@ public class Sign {
 		String OrgUserLastname = "User Lastname"; // OPT
 		String OrgUserEmail = "User Email"; // OPT
 		// JWT data
-		String issuer = "My Organization";
 		String tiledeskUserId = projectId + "_" + OrgUserId;
 		String subject = "userexternal";
 		String aud = "https://tiledesk.com/projects/" + projectId;
 		String jwt = TiledeskJWT.createJWT(
 				tiledeskUserId,
-				issuer,
 				subject,
 				aud,
 				secret,
