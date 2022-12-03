@@ -3,7 +3,7 @@ A demo project on how to create and sign a JWT with Java for strong authenticati
 
 Import this project as a **Maven project**.
 
-This project uses [JJWT library](https://github.com/jwtk/jjwt) to sign a Tiledesk web token to use in Java projects for [Tiledesk Custom Authentication](https://developer.tiledesk.com/apis/authentication).
+This project uses [JJWT library](https://github.com/jwtk/jjwt) to sign a *JSON Web Token* (JWT) to use in Java projects for [Tiledesk Custom Authentication](https://developer.tiledesk.com/apis/authentication).
 
 You can find the simple logic in class is TiledeskJWT.java
 
